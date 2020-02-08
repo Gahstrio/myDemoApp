@@ -38,21 +38,24 @@ public class AppTest
     }
        public void testTrue() {
       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-      assertTrue(new App().search(array,3));
+      ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1,2,3,4));
+      assertTrue(new App().search(array,array2,1,3));
     }
 
 
     public void testEmptyArray() {
       ArrayList<Integer> array = new ArrayList<>();
-      assertFalse(new App().search(array,2));
+      ArrayList<Integer> array2 = new ArrayList<>();
+      assertFalse(new App().search(array,array2,1,2));
     }
    
     public void testNull() {
-      assertFalse(new App().search(null,2));
+      assertFalse(new App().search(null,null,1,2));
     }
     public void testWrongSize(){
         ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9));
-        assertFalse(new App().search(array1,10));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1,2));
+        assertFalse(new App().search(array1,array2,1,10));
         
     }
 
